@@ -7,10 +7,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2017",
-    "resolveJsonModule": true, //allow import json file
+    "resolveJsonModule": true //allow import json file
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src", "src/utils/HTTPError.ts", "src/triggers/userTrigger.ts"]
 }

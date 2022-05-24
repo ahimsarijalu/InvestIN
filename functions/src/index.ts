@@ -1,16 +1,27 @@
 import * as functions from "firebase-functions";
-import * as express from 'express'
-import { addEntry, getAllEntries, updateEntry, deleteEntry } from './entry'
+import * as express from "express";
+import errorMiddleware from "./middlewares/errorHandler";
+import router from "./routes/index";
+import * as AuthenticationTrigger from "./triggers/authTrigger";
+import * as FirestoreTrigger from "./triggers/userTrigger";
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
 
-const app = express()
+const app = express();
 
-app.get('/', (req, res) => res.status(200).send('Hey there!'))
-app.get('/entries', getAllEntries)
-app.post('/entries', addEntry)
-app.patch('/entries/:entryId', updateEntry)
-app.delete('/entries/:entryId', deleteEntry)
-exports.app = functions.https.onRequest(app) 
+app.use(router);
+app.use(errorMiddleware);
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+export default {
+  ...FirestoreTrigger,
+  ...AuthenticationTrigger,
+  api: functions.https.onRequest(app),
+};
