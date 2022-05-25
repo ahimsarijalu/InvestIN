@@ -3,4 +3,10 @@ export interface User {
   email?: string;
   createdAt?: string;
   imageUrl?: string;
+  bio?: string;
+  city?: string;
+  province?: string;
+  investorRole?: boolean;
+  organization?: string;
+  category?: [];
 }
