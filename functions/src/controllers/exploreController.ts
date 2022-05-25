@@ -1,23 +1,27 @@
 import { Request, Response, NextFunction } from "express";
+
 import { db } from "../config/firebase";
 import { Explore } from "../interfaces/explore.interface";
 import HTTPError from "../utils/HTTPError";
 import returnSuccess from "../utils/successHandler";
 
 const addExplore = async (req: Request, res: Response, next: NextFunction) => {
-  const {
-    body: { text, imageUrl },
-  } = req;
+  const { text, imageUrl } = req.body;
 
   try {
-    const entry = db.collection("explore").doc();
-    const entryObject: Explore = {
-      id: entry.id,
+    // let userID = firebase.auth().currentUser?.getIdToken(true);
+    const querySnapshot = db.collection("explore").doc();
+    const exploreObject: Explore = {
+      // userId: userID,
+      commentCount: 0,
       text,
       imageUrl,
+      createdAt: new Date().toISOString(),
+      isLike: false,
+      likeCount: 0,
     };
-    entry.set(entryObject);
-    returnSuccess(200, res, "Entry added successfully", entryObject);
+    querySnapshot.set(exploreObject);
+    returnSuccess(200, res, "Explore added successfully", exploreObject);
   } catch (error) {
     return next(error);
   }
@@ -29,14 +33,28 @@ const getAllExplore = async (
   next: NextFunction
 ) => {
   try {
-    const entryDocs = await db.collection("explore").get();
+    const querySnapshot = await db.collection("explore").get();
     let result: Array<Explore> = [];
-
-    entryDocs.forEach((doc: any) => {
-      const entryObject: Explore = doc.data();
-      return result.push(entryObject);
+    querySnapshot.forEach((doc: any) => {
+      const exploreObject: Explore = doc.data();
+      return result.push(exploreObject);
     });
-    returnSuccess(200, res, "Fetched list", result);
+    returnSuccess(200, res, "Successfully fetched explore list", result);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+const getExplore = async (req: Request, res: Response, next: NextFunction) => {
+  const { docId } = req.params;
+
+  try {
+    const querySnapshot = await db.collection("explore").doc(docId).get();
+    let result: any = [];
+    if (querySnapshot.exists) {
+      result.push(querySnapshot.data());
+    }
+    returnSuccess(200, res, "Successfully fetched explore", result);
   } catch (error) {
     return next(error);
   }
@@ -47,24 +65,27 @@ const updateExplore = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { entryId } = req.params;
-  const { isLike, commentCount, likeCount } = req.body;
-  try {
-    const entry = db.collection("explore").doc(entryId);
+  const { docId } = req.params;
+  const { commentCount, text, imageUrl, isLike, likeCount } = req.body;
 
-    const entryObject = {
-      isLike: isLike,
-      commentCount: commentCount,
-      likeCount: likeCount,
+  try {
+    const querySnapshot = db.collection("explore").doc(docId);
+
+    const exploreObject = {
+      commentCount,
+      text,
+      imageUrl,
+      isLike,
+      likeCount,
     };
-    await entry.update(entryObject).catch((error) => {
+    await querySnapshot.update(exploreObject).catch((error) => {
       if (error.message.includes("NOT_FOUND")) {
         throw new HTTPError(404, "No entity to update");
       } else {
         throw new HTTPError(400, error.message);
       }
     });
-    returnSuccess(200, res, "Entry updated successfully", entryObject);
+    returnSuccess(200, res, "Explore updated successfully", exploreObject);
   } catch (error) {
     return next(error);
   }
@@ -75,12 +96,11 @@ const deleteExplore = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { entryId } = req.params;
+  const { docId } = req.params;
 
   try {
-    const entry = db.collection("explore").doc(entryId);
-    // exists: true: return error if NOT_FOUND
-    await entry.delete({ exists: true }).catch((error) => {
+    const querySnapshot = db.collection("explore").doc(docId);
+    await querySnapshot.delete({ exists: true }).catch((error) => {
       if (error.message.includes("NOT_FOUND")) {
         throw new HTTPError(404, "No entity to update");
       } else {
@@ -88,10 +108,10 @@ const deleteExplore = async (
       }
     });
 
-    returnSuccess(200, res, "Entry deleted successfully", null);
+    returnSuccess(200, res, "Explore deleted successfully", null);
   } catch (error) {
     return next(error);
   }
 };
 
-export { addExplore, getAllExplore, updateExplore, deleteExplore };
+export { addExplore, getAllExplore, getExplore, updateExplore, deleteExplore };
