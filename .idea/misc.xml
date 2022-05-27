@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_investin_logo.xml" value="0.1045" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_3_btn.xml" value="0.1065" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_bg.xml" value="0.168" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1635" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.176" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_onboarding.xml" value="0.22146739130434784" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_splash_screen.xml" value="0.2151268115942029" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_first_on_boarding.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_second_on_boarding.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.22644927536231885" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_on_boarding.xml" value="0.22644927536231885" />
       </map>
     </option>
   </component>
