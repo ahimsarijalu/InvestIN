@@ -5,7 +5,6 @@ import returnSuccess from "../utils/successHandler";
 
 const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   const {
-    email,
     bio,
     city,
     province,
@@ -19,7 +18,6 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const querySnapshot = db.collection("users").doc(docId);
     const userObject: User = {
-      email: email,
       bio: bio,
       city: city,
       province: province,

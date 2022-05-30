@@ -36,8 +36,9 @@ const getAllExplore = async (
     const querySnapshot = await db.collection("explore").get();
     let result: Array<Explore> = [];
     querySnapshot.forEach((doc: any) => {
-      const exploreObject: Explore = doc.data();
-      return result.push(exploreObject);
+      const docId = doc.id;
+      const docObj: Explore = { ...doc.data(), ["id"]: docId };
+      return result.push(docObj);
     });
     returnSuccess(200, res, "Successfully fetched explore list", result);
   } catch (error) {
@@ -71,7 +72,7 @@ const updateExplore = async (
   try {
     const querySnapshot = db.collection("explore").doc(docId);
 
-    const exploreObject = {
+    const exploreObject: Explore = {
       commentCount,
       text,
       imageUrl,
