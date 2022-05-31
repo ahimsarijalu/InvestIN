@@ -1,8 +1,8 @@
-interface CommentContent {
-  text: string;
+export interface CommentContent {
+  userId?: string;
+  displayName?: string;
+  photoURL?: string;
+  text?: string;
   exploreId?: string;
-}
-
-export interface Comment {
-  comment: CommentContent[];
+  createdAt?: string;
 }

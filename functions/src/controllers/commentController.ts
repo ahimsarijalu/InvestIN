@@ -1,26 +1,28 @@
 import { Request, Response, NextFunction } from "express";
 
 import { db } from "../config/firebase";
-import { Comment } from "../interfaces/comment.interface";
-import HTTPError from "../utils/HTTPError";
+import { CommentContent } from "../interfaces/comment.interface";
 import returnSuccess from "../utils/successHandler";
 
 const addComment = async (req: Request, res: Response, next: NextFunction) => {
-  const { text } = req.body;
+  const { userId, displayName, photoURL, text } = req.body;
+  const { exploreId } = req.params;
 
   try {
-    const querySnapshot = db.collection("comment").doc();
-    const commentObject: Comment = {
-      comment: text,
+    const querySnapshot = db
+      .collection("comment")
+      .doc(exploreId)
+      .collection("comment");
+    const commentObject: CommentContent = {
+      userId,
+      displayName,
+      photoURL,
+      text,
+      exploreId,
+      createdAt: new Date().toISOString(),
     };
-    await querySnapshot.set(commentObject).catch((error) => {
-      if (error.message.includes("NOT_FOUND")) {
-        throw new HTTPError(404, "No entity to update");
-      } else {
-        throw new HTTPError(400, error.message);
-      }
-    });
-    returnSuccess(200, res, "Successfully added a comment", commentObject);
+    await querySnapshot.add(commentObject);
+    returnSuccess(201, res, "Successfully added a comment", commentObject);
   } catch (error) {
     return next(error);
   }
@@ -31,19 +33,25 @@ const getPaginatedComment = async (
   res: Response,
   next: NextFunction
 ) => {
-  try {
-    const commentRef = db.collection("comment").limit(5);
-    await commentRef.get().then((documentSnapshots) => {
-      // Get the last visible document
-      const lastVisible =
-        documentSnapshots.docs[documentSnapshots.docs.length - 1];
-      console.log("last", lastVisible);
+  const { exploreId } = req.params;
 
-      // Construct a new query starting at this document,
-      // get the next 25 cities.
-      return db.collection("comment").startAfter(lastVisible).limit(5);
-    });
-    returnSuccess(200, res, "Successfully fetched comment", commentRef);
+  try {
+    let result: any = [];
+    const querySnapshot = await db.collection("comment").doc(exploreId).get();
+    // await commentRef.get().then((documentSnapshots) => {
+    //   // Get the last visible document
+    //   const lastVisible =
+    //     documentSnapshots.docs[documentSnapshots.docs.length - 1];
+    //   console.log("last", lastVisible);
+
+    //   // Construct a new query starting at this document,
+    //   // get the next 25 cities.
+    //   return db.collection("comment").startAfter(lastVisible).limit(5);
+    // });
+    if (querySnapshot.exists) {
+      result.push(querySnapshot.data());
+    }
+    returnSuccess(200, res, "Successfully fetched explore", result);
   } catch (error) {
     next(error);
   }

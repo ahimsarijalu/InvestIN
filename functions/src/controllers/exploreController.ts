@@ -23,7 +23,7 @@ const addExplore = async (req: Request, res: Response, next: NextFunction) => {
       createdAt: new Date().toISOString(),
     };
     querySnapshot.set(exploreObject);
-    returnSuccess(200, res, "Explore added successfully", exploreObject);
+    returnSuccess(201, res, "Explore added successfully", exploreObject);
   } catch (error) {
     return next(error);
   }
@@ -209,19 +209,19 @@ const uploadImage = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-export const deleteFile = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  const srcFilename = req.params.filename;
-  try {
-    await bucket.file(srcFilename).delete();
-    returnSuccess(200, res, "Deleted Image", null);
-  } catch (error) {
-    next(error);
-  }
-};
+// export const deleteFile = async (
+//   req: Request,
+//   res: Response,
+//   next: NextFunction
+// ) => {
+//   const srcFilename = req.params.filename;
+//   try {
+//     await bucket.file(srcFilename).delete();
+//     returnSuccess(200, res, "Deleted Image", null);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 export {
   addExplore,
