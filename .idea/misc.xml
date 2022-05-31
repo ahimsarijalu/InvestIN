@@ -9,15 +9,22 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_3_btn.xml" value="0.1065" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_bg.xml" value="0.168" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1635" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner.xml" value="0.1645" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner_blue.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_onboarding.xml" value="0.22146739130434784" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_roles.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_splash_screen.xml" value="0.2151268115942029" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/category_list_item.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_first_on_boarding.xml" value="0.264" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_second_on_boarding.xml" value="0.264" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.22644927536231885" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_second_on_boarding.xml" value="0.1" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_on_boarding.xml" value="0.22644927536231885" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2515625" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1645" />
       </map>

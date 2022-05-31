@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">InvestIN</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="go_to_next_slide">Go to Next Slide</string>
+    <string name="business_owner">Business Owner</string>
+    <string name="investor">Investor</string>
+    <string name="choose_a_role_for_you">Choose a role for you.</string>
+    <string name="first_onboarding_image">First OnBoarding Image</string>
+    <string name="second_onboarding_image">Second OnBoarding Image</string>
+    <string name="third_onboarding_image">Third OnBoarding Image</string>
+    <string name="sign_in">Sign In</string>
+    <string name="app_logo">App Logo</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create account</string>
+    <string name="arrow_up">Arrow Up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="notification">Notification</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="category">Category</string>
 </resources>

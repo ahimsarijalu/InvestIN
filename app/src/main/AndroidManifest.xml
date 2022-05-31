@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InvestIN.Starting">
         <activity
+            android:name=".ui.auth.SignupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.InvestIN" />
+        <activity
+            android:name=".ui.auth.SignInActivity"
+            android:exported="false"
+            android:theme="@style/Theme.InvestIN" />
+        <activity
+            android:name=".ui.roles.RolesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.InvestIN" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.InvestIN" />

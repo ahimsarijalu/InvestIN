@@ -3,7 +3,6 @@ package com.ahimsarijalu.investin.ui.onboarding
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -11,7 +10,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.ahimsarijalu.investin.R
 import com.ahimsarijalu.investin.databinding.ActivityOnBoardingBinding
-import com.ahimsarijalu.investin.ui.home.HomeActivity
+import com.ahimsarijalu.investin.ui.roles.RolesActivity
 
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnBoardingBinding
@@ -39,11 +38,11 @@ class OnBoardingActivity : AppCompatActivity() {
         binding.nextButton.setOnClickListener {
             if (viewPager.currentItem == 2) {
                 val sharedPref = this.getSharedPreferences("isFirstTime", Context.MODE_PRIVATE)
-                with (sharedPref.edit()) {
+                with(sharedPref.edit()) {
                     putBoolean("isFirstTime", false)
                     apply()
                 }
-                Intent(this, HomeActivity::class.java).apply {
+                Intent(this, RolesActivity::class.java).apply {
                     startActivity(this)
                     finish()
                 }
