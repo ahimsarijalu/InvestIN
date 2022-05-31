@@ -57,7 +57,7 @@ Endpoints for viewing and manipulating the explore feeds that the Authenticated 
 * [Show All Explore Feed]() : `GET /explore`
 * [Show An Explore]() : `GET /explore/:docId`
 * [Create Explore]() : `POST /explore`
-* [Update Explore]() : `PUT /explore/:docId`
+* [Update Explore]() : `PATCH /explore/:docId`
 * [Delete Explore]() : `DELETE /explore/:docId`
 * [Upload Image]() : `POST /explore/upload/:docId`
 
