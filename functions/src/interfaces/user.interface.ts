@@ -9,4 +9,5 @@ export interface User {
   organization?: string;
   category?: string;
   imageUrl?: string[];
+  postsLiked?: string[];
 }

@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import updateURLOnExplore from "./methods/storageMethods";
+// import updateURLOnExplore from "./methods/storageMethods";
 
 export const onArchive = functions.storage
   .object()
@@ -7,12 +7,12 @@ export const onArchive = functions.storage
     console.log("storage archived");
   });
 
-export const onDelete = functions.storage
-  .object()
-  .onDelete((_objectMetadata, _context) => {
-    console.log("storage deleted");
-    updateURLOnExplore(_objectMetadata);
-  });
+// export const onDelete = functions.storage
+//   .object()
+//   .onDelete((_objectMetadata, _context) => {
+//     console.log("storage deleted");
+//     updateURLOnExplore(_objectMetadata, _context);
+//   });
 
 export const onFinalize = functions.storage
   .object()

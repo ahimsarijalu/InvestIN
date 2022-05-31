@@ -9,7 +9,7 @@ export const createUserInFirestore = async (userDoc: UserRecord) => {
       email: userDoc.email,
       createdAt: new Date().toISOString(),
     };
-    const user = db.collection("users").doc();
+    const user = db.collection("users").doc(userDoc.uid);
     await user.set(newUser);
   } catch (error) {
     throw error;

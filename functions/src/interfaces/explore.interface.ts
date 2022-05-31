@@ -1,9 +1,7 @@
 export type Explore = {
-  userId?: Promise<string>;
-  commentCount?: number;
+  //userId?: Promise<string>;
   text?: string;
   imageUrl?: string[];
   createdAt?: string;
-  isLike?: boolean;
-  likeCount?: number;
+  likeUsers?: string[];
 };

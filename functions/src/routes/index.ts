@@ -1,10 +1,15 @@
 import * as express from "express";
 import {
+  addComment,
+  getPaginatedComment,
+} from "../controllers/commentController";
+import {
   addExplore,
   deleteExplore,
   getAllExplore,
   getExplore,
   updateExplore,
+  uploadImage,
 } from "../controllers/exploreController";
 import {
   getAllUsers,
@@ -23,6 +28,10 @@ router.get("/explore/:docId", isAuthorizedUser, getExplore);
 router.post("/explore", isAuthorizedUser, addExplore);
 router.patch("/explore/:docId", isAuthorizedUser, updateExplore);
 router.delete("/explore/:docId", isAuthorizedUser, deleteExplore);
+router.post("/explore/upload/:docId", isAuthorizedUser, uploadImage);
+
+router.get("/comment", isAuthorizedUser, getPaginatedComment);
+router.post("/comment", isAuthorizedUser, addComment);
 
 router.get("/user", isAuthorizedUser, getAllUsers);
 router.get("/user/:docId", isAuthorizedUser, getUser);

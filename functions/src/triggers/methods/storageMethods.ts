@@ -1,8 +1,12 @@
 import { db } from "../../config/firebase";
+import { EventContext } from "firebase-functions";
 import { Explore } from "../../interfaces/explore.interface";
 import { ObjectMetadata } from "firebase-functions/lib/providers/storage";
 
-const updateURLOnExplore = async (objectMetadata: ObjectMetadata) => {
+const updateURLOnExplore = async (
+  objectMetadata: ObjectMetadata,
+  context: EventContext
+) => {
   const imageUrl = objectMetadata.mediaLink;
   const batch = db.batch();
   try {

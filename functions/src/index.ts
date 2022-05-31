@@ -1,9 +1,10 @@
 import * as functions from "firebase-functions";
-import * as express from "express";
+import express from "express";
 import errorMiddleware from "./middlewares/errorHandler";
 import router from "./routes/index";
 import * as AuthenticationTrigger from "./triggers/authTrigger";
 import * as FirestoreTrigger from "./triggers/userTrigger";
+import * as StorageTrigger from "./triggers/storageTrigger";
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -23,5 +24,6 @@ app.use(
 export default {
   ...FirestoreTrigger,
   ...AuthenticationTrigger,
+  ...StorageTrigger,
   api: functions.https.onRequest(app),
 };

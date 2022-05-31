@@ -12,6 +12,7 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     organization,
     category,
     imageUrl,
+    postsLiked,
   } = req.body;
   const { docId } = req.params;
 
@@ -25,6 +26,7 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
       organization: organization,
       category: category,
       imageUrl: imageUrl,
+      postsLiked,
     };
 
     await querySnapshot.update(userObject).catch((error) => {
