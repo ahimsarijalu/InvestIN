@@ -5,10 +5,10 @@ import returnSuccess from "../utils/successHandler";
 
 const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   const {
+    name,
     bio,
     city,
     province,
-    investorRole,
     organization,
     category,
     imageUrl,
@@ -19,14 +19,14 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const querySnapshot = db.collection("users").doc(docId);
     const userObject: User = {
+      name: name,
       bio: bio,
       city: city,
       province: province,
-      investorRole: investorRole,
       organization: organization,
       category: category,
       imageUrl: imageUrl,
-      postsLiked,
+      postsLiked: postsLiked,
     };
 
     await querySnapshot.update(userObject).catch((error) => {
