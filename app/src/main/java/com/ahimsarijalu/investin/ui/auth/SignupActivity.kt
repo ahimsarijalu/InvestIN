@@ -61,6 +61,7 @@ class SignupActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val user = auth.currentUser
+                        user?.getIdToken(true)
                         val db = Firebase.firestore
 
                         val userDetails = mapOf(

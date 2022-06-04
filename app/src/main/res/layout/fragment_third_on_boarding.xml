@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_onboarding_2_img" />
+        app:srcCompat="@drawable/ic_onboarding_3_img"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/onBoardingTitle"
@@ -25,7 +26,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="Lorem ipsum dolor sit amet consectetur"
+        android:text="@string/title_third_onboarding"
         android:textAlignment="center"
         android:textColor="@color/navy_blue"
         android:textSize="20sp"

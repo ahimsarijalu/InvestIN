@@ -25,7 +25,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="Lorem ipsum dolor sit amet consectetur"
+        android:text="@string/title_second_onboarding"
         android:textAlignment="center"
         android:textColor="@color/navy_blue"
         android:textSize="20sp"

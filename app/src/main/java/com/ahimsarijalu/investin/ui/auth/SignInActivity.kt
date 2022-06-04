@@ -6,11 +6,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ahimsarijalu.investin.databinding.ActivitySignInBinding
-import com.ahimsarijalu.investin.ui.home.HomeActivity
+import com.ahimsarijalu.investin.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -37,14 +37,12 @@ class SignInActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        val user = auth.currentUser
-                        updateUI(user)
+                        updateUI()
                     } else {
                         Toast.makeText(
                             this, "Authentication failed.",
                             Toast.LENGTH_SHORT
                         ).show()
-                        updateUI(null)
                     }
                 }
         }
@@ -61,9 +59,8 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateUI(user: FirebaseUser?) {
-        Intent(this, HomeActivity::class.java).apply {
-            putExtra("user", user)
+    private fun updateUI() {
+        Intent(this, MainActivity::class.java).apply {
             startActivity(this)
             finishAffinity()
         }
