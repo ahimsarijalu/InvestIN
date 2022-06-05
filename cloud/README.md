@@ -46,24 +46,24 @@ request. A Token can be acquired from the Sign In view above.
 Each endpoint manipulates or displays information related to the User whose
 Token is provided with the request:
 
-* [Show All Signed Up User Info]() : `GET /user`
-* [Show User info]() : `GET /user/:userId`
-* [Update User Info]() : `PATCH /user/:userId`
+* [Show All Signed Up User Info](docs/user/get.md) : `GET /user`
+* [Show User info](docs/user/get.md) : `GET /user/:userId`
+* [Update User Info](docs/user/patch.md) : `PATCH /user/:userId`
 
 ### Explore related
 
 Endpoints for viewing and manipulating the explore feeds that the Authenticated User has permissions to access.
 
-* [Show All Explore Feed]() : `GET /explore`
-* [Show An Explore]() : `GET /explore/:docId`
-* [Create Explore]() : `POST /explore`
-* [Update Explore]() : `PATCH /explore/:docId`
-* [Delete Explore]() : `DELETE /explore/:docId`
-* [Upload Image]() : `POST /explore/upload/:docId`
+* [Show All Explore Feed](docs/explore/get.md) : `GET /explore`
+* [Show An Explore](docs/explore/:docId/get.md) : `GET /explore/:docId`
+* [Create Explore](docs/explore/post.md) : `POST /explore`
+* [Update Explore](docs/explore/:docId/patch.md) : `PATCH /explore/:docId`
+* [Delete Explore](docs/explore/:docId/delete.md) : `DELETE /explore/:docId`
+* [Upload Image](docs/explore/upload/:docId/post.md) : `POST /explore/upload/:docId`
 
 ### Comment related
 
 Endpoints for viewing and manipulating the comment section on a specific explore post, and that the Authenticated User has permissions to access.
 
-* [Show All Comment]() : `GET /comment`
-* [Create Comment]() : `POST /comment`
+* [Show All Comment](docs/comment/get.md) : `GET /comment`
+* [Create Comment](docs/comment/post.md) : `POST /comment`
