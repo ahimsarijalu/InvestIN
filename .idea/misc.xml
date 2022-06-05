@@ -21,16 +21,18 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner_blue.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.1527777777777778" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_onboarding.xml" value="0.22146739130434784" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_post.xml" value="0.264" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_roles.xml" value="0.12" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_settings.xml" value="0.23369565217391305" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_splash_screen.xml" value="0.2151268115942029" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/category_list_item.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_first_on_boarding.xml" value="0.264" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_home.xml" value="0.21223958333333334" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_notification.xml" value="0.11145833333333334" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
@@ -38,7 +40,8 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_loading.xml" value="0.2223731884057971" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_on_boarding.xml" value="0.22644927536231885" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_row_explore.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_post_image.xml" value="0.20244565217391305" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/item_row_explore.xml" value="0.2" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2515625" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/home_menu.xml" value="0.2515625" />

@@ -10,6 +10,6 @@ interface ApiService {
     suspend fun getAllExplore(
         @Header("Authorization") token: String,
         @Query("page") page: Int = 1,
-        @Query("size") size: Int = 5
+        @Query("size") size: Int = 1
     ): ExploreResponse
 }

@@ -2,13 +2,18 @@ package com.ahimsarijalu.investin.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.aemerse.slider.model.CarouselItem
+import androidx.viewbinding.ViewBinding
 import com.ahimsarijalu.investin.data.datasource.remote.response.DataItem
+import com.ahimsarijalu.investin.databinding.ItemPostImageBinding
 import com.ahimsarijalu.investin.databinding.ItemRowExploreBinding
 import com.bumptech.glide.Glide
+import org.imaginativeworld.whynotimagecarousel.listener.CarouselListener
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+import org.imaginativeworld.whynotimagecarousel.utils.setImage
 
 class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF_CALLBACK) {
 
@@ -30,6 +35,27 @@ class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF
             binding.postTv.text = data.text
 
             val carousel = binding.photoCarousel
+            carousel.carouselListener = object : CarouselListener {
+                override fun onCreateViewHolder(
+                    layoutInflater: LayoutInflater,
+                    parent: ViewGroup
+                ): ViewBinding {
+                    return ItemPostImageBinding.inflate(layoutInflater, parent, false)
+                }
+
+                override fun onBindViewHolder(
+                    binding: ViewBinding,
+                    item: CarouselItem,
+                    position: Int
+                ) {
+                    val currentBinding = binding as ItemPostImageBinding
+
+                    currentBinding.imageView.apply {
+                        scaleType = ImageView.ScaleType.CENTER_CROP
+                        setImage(item)
+                    }
+                }
+            }
             val photoList = mutableListOf<CarouselItem>()
             if (data.imageUrl != null) {
                 for (photo in data.imageUrl) {
@@ -40,8 +66,8 @@ class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF
                     )
                 }
             }
-            carousel.setData(photoList)
 
+            carousel.setData(photoList)
 
             itemView.setOnClickListener {
                 onItemClickCallback.onItemClicked(this, data)

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahimsarijalu.investin.R
 import com.ahimsarijalu.investin.databinding.FragmentHomeBinding
 import com.ahimsarijalu.investin.ui.post.PostActivity
+import com.ahimsarijalu.investin.ui.settings.SettingsActivity
 import com.ahimsarijalu.investin.utils.ViewModelFactory
 import kotlinx.serialization.ExperimentalSerializationApi
 
@@ -20,18 +21,43 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
         showExplore()
+        setHasOptionsMenu(true)
+    }
 
-        return binding.root
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.btn_upload -> {
+                Intent(activity, PostActivity::class.java).apply {
+                    startActivity(this)
+                }
+                true
+            }
+            R.id.btn_settings -> {
+                Intent(activity, SettingsActivity::class.java).apply {
+                    startActivity(this)
+                }
+                true
+            }
+            else -> true
+        }
     }
 
     private fun setupViewModel() {
@@ -57,28 +83,6 @@ class HomeFragment : Fragment() {
         homeViewModel.explore.observe(viewLifecycleOwner) { explore ->
             adapter.submitData(lifecycle, explore)
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.home_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-            R.id.btn_upload -> {
-                Intent(activity, PostActivity::class.java).apply {
-                    startActivity(this)
-                }
-                true
-            }
-            R.id.btn_settings -> {
-                Intent(activity, PostActivity::class.java).apply {
-                    startActivity(this)
-                }
-                true
-            } else -> true
-        }
-
     }
 
     override fun onDestroyView() {

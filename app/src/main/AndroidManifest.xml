@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InvestIN.Starting">
         <activity
-            android:name=".ui.details.DetailsActivity"
+            android:name=".ui.settings.SettingsActivity"
             android:exported="false"
             android:theme="@style/Theme.InvestIN"/>
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.InvestIN" />
         <activity
             android:name=".ui.post.PostActivity"
             android:exported="false"

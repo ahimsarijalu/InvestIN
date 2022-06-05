@@ -80,9 +80,13 @@ dependencies {
     implementation 'androidx.room:room-paging:2.5.0-alpha02'
 
     //Slide
-    implementation 'com.github.akshaaatt:Sliding-Carousel:1.0.4'
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 
     //Json Serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
 
+    //Smooth Bottom Bar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 }
