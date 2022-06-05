@@ -6,13 +6,12 @@ import returnSuccess from "../utils/successHandler";
 const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   const {
     displayName,
-    photoURL,
+    avatar,
     bio,
     city,
     province,
     organization,
     category,
-    imageUrl,
     postsLiked,
   } = req.body;
   const { docId } = req.params;
@@ -21,13 +20,12 @@ const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     const querySnapshot = db.collection("users").doc(docId);
     const userObject: User = {
       displayName,
-      photoURL,
+      avatar,
       bio,
       city,
       province,
       organization,
       category,
-      imageUrl,
       postsLiked,
     };
 

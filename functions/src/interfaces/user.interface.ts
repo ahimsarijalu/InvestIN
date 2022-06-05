@@ -2,7 +2,7 @@ export interface User {
   userId?: string;
   email?: string;
   displayName?: string;
-  photoURL?: string;
+  avatar?: string;
   createdAt?: string;
   bio?: string;
   city?: string;
@@ -10,6 +10,5 @@ export interface User {
   investorRole?: boolean;
   organization?: string;
   category?: string;
-  imageUrl?: string[];
   postsLiked?: string[];
 }
