@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
         setupViewModel()
         showExplore()
         setHasOptionsMenu(true)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_finance.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_home.xml" value="0.1665" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1665" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_investin_logo.xml" value="0.1045" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_3_btn.xml" value="0.1065" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_3_img.xml" value="0.1665" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_onboarding_bg.xml" value="0.168" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_profile.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_role_business_owner_img.xml" value="0.1665" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_role_investor_img.xml" value="0.1665" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_roles_bg.xml" value="0.1055" />
@@ -47,6 +49,7 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/home_menu.xml" value="0.2515625" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1645" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/xml/preferences.xml" value="0.12234042553191489" />
       </map>
     </option>
   </component>

@@ -7,7 +7,6 @@ import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ahimsarijalu.investin.R
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             val navHostFragment = supportFragmentManager
                 .findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
-            val navController = navHostFragment.navController
+            navController = navHostFragment.navController
 
             val popupMenu = PopupMenu(this, null)
             popupMenu.inflate(R.menu.bottom_nav_menu)
