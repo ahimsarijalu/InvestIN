@@ -127,7 +127,7 @@ const uploadImage = async (req: Request, res: Response, next: NextFunction) => {
 
     const tmpdir = os.tmpdir();
     let imageFileName: string;
-    //let imagePath: string;
+    const uuid = uuidv4();
 
     // This object will accumulate all the fields, keyed by their name
     const fields: any = {};
@@ -184,12 +184,12 @@ const uploadImage = async (req: Request, res: Response, next: NextFunction) => {
           destination: `explore/${imageFileName}`,
           resumable: false,
           metadata: {
-            firebaseStorageDownloadTokens: uuidv4(),
+            firebaseStorageDownloadTokens: uuid,
             cacheControl: "public, max-age=31536000",
           },
         });
         imageUrls.push(
-          `https://firebasestorage.googleapis.com/v0/b/investin-350603.appspot.com/o/explore%2F${imageFileName}?alt=media`
+          `https://firebasestorage.googleapis.com/v0/b/investin-350603.appspot.com/o/explore%2F${imageFileName}?alt=media&token=${uuid}`
         );
         await db
           .collection(`explore`)
