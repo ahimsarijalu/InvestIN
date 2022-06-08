@@ -1,7 +1,8 @@
 export interface CommentContent {
+  id?: string;
   userId?: string;
   displayName?: string;
-  photoURL?: string;
+  avatar?: string;
   text?: string;
   exploreId?: string;
   createdAt?: string;

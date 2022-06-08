@@ -5,23 +5,21 @@ import { CommentContent } from "../interfaces/comment.interface";
 import returnSuccess from "../utils/successHandler";
 
 const addComment = async (req: Request, res: Response, next: NextFunction) => {
-  const { userId, displayName, photoURL, text } = req.body;
+  const { userId, displayName, avatar, text } = req.body;
   const { exploreId } = req.params;
 
   try {
-    const querySnapshot = db
-      .collection("comment")
-      .doc(exploreId)
-      .collection("comment");
+    const querySnapshot = db.collection("comment").doc();
     const commentObject: CommentContent = {
+      id: querySnapshot.id,
       userId,
       displayName,
-      photoURL,
+      avatar,
       text,
       exploreId,
       createdAt: new Date().toISOString(),
     };
-    await querySnapshot.add(commentObject);
+    await querySnapshot.create(commentObject);
     returnSuccess(201, res, "Successfully added a comment", commentObject);
   } catch (error) {
     return next(error);

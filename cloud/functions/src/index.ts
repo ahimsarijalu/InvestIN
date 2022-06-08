@@ -5,6 +5,7 @@ import router from "./routes/index";
 import * as AuthenticationTrigger from "./triggers/authTrigger";
 import * as FirestoreTrigger from "./triggers/userTrigger";
 import * as StorageTrigger from "./triggers/storageTrigger";
+import * as CommentTrigger from "./triggers/commentTrigger";
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -24,6 +25,7 @@ app.use(
 export default {
   ...FirestoreTrigger,
   ...AuthenticationTrigger,
+  ...CommentTrigger,
   ...StorageTrigger,
   api: functions.https.onRequest(app),
 };
