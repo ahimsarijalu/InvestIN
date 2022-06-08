@@ -11,7 +11,7 @@ import HTTPError from "../utils/HTTPError";
 import returnSuccess from "../utils/successHandler";
 
 const addExplore = async (req: Request, res: Response, next: NextFunction) => {
-  const { text, imageUrl } = req.body;
+  const { text } = req.body;
 
   try {
     // let userID = firebase.auth().currentUser?.getIdToken(true);
@@ -19,7 +19,6 @@ const addExplore = async (req: Request, res: Response, next: NextFunction) => {
     const exploreObject: Explore = {
       // userId: userID,
       text,
-      imageUrl,
       createdAt: new Date().toISOString(),
     };
     querySnapshot.set(exploreObject);
@@ -184,8 +183,10 @@ const uploadImage = async (req: Request, res: Response, next: NextFunction) => {
           destination: `explore/${imageFileName}`,
           resumable: false,
           metadata: {
-            firebaseStorageDownloadTokens: uuid,
-            cacheControl: "public, max-age=31536000",
+            metadata: {
+              firebaseStorageDownloadTokens: uuid,
+              cacheControl: "public, max-age=31536000",
+            },
           },
         });
         imageUrls.push(
