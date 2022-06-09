@@ -11,12 +11,12 @@ Revenue Growth Regression with Deep Learning using [TensorFlow Keras](https://ww
 
 ## Data Modeling
 Build and train [TensorFlow Sequential Model](https://www.tensorflow.org/api_docs/python/tf/keras/Sequential) with this summary
-<p><img src="https://github.com/ayaazzara/InvestIN/blob/ML/model%20summary.png" width="400"><p>
+<p><img src="https://github.com/ayaazzara/InvestIN/blob/ML/ML/model%20summary.png" width="400"><p>
 
 ## Model Evaluation
 - R2 Score: 0.764
 - Model Prediction vs True Value
-<p><img src="https://github.com/ayaazzara/InvestIN/blob/ML/true%20values%20vs%20prediction.png" width="400"><p>
+<p><img src="https://github.com/ayaazzara/InvestIN/blob/ML/ML/true%20values%20vs%20prediction.png" width="400"><p>
 
 ## Model Deployment
 The trained is model converted to TFLite format and then deployed to Firebase
