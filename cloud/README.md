@@ -1,5 +1,19 @@
 # InvestIN - Cloud
 Backend branch with the aim of providing a working use of Firebase Authentication + Cloud Firestore services.
+
+## Stacks
+- Firebase
+- Cloud Firestore
+- Identity Platform
+- Cloud Storage
+- Cloud Function
+- Node.js Express
+- Typescript
+- Multer
+- Busboy
+- Lodash
+- Prettier
+
 ## Setting Up
 1. Include `serviceAccount.json` and `firebaseConfig.json` which has been renamed from the initial Firebase Admin SDK key and `google-services.json` under the Project Settings.
 2. As this directory contains the whole Cloud Function.
