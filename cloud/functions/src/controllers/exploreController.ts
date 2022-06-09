@@ -17,8 +17,9 @@ const addExplore = async (req: Request, res: Response, next: NextFunction) => {
     // let userID = firebase.auth().currentUser?.getIdToken(true);
     const querySnapshot = db.collection("explore").doc();
     const exploreObject: Explore = {
-      // userId: userID,
+      id: querySnapshot.id,
       text,
+      commentCounter: 0,
       createdAt: new Date().toISOString(),
     };
     querySnapshot.set(exploreObject);
