@@ -1,7 +1,7 @@
 export interface CommentContent {
   id?: string;
   userId?: string;
-  displayName?: string;
+  author?: string;
   avatar?: string;
   text?: string;
   exploreId?: string;

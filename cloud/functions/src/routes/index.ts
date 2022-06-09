@@ -15,6 +15,7 @@ import {
   getAllUsers,
   getUser,
   updateUser,
+  uploadPhotoURL,
 } from "../controllers/userController";
 import isAuthorizedUser from "../middlewares/authHandler";
 
@@ -36,5 +37,6 @@ router.post("/comment/:exploreId", isAuthorizedUser, addComment);
 router.get("/user", isAuthorizedUser, getAllUsers);
 router.get("/user/:docId", isAuthorizedUser, getUser);
 router.patch("/user/:docId", isAuthorizedUser, updateUser);
+router.post("/user/upload/:docId", isAuthorizedUser, uploadPhotoURL);
 
 export default router;

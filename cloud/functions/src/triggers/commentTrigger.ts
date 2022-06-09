@@ -4,7 +4,7 @@ import _ from "lodash";
 import { db } from "../config/firebase";
 import { CommentContent } from "../interfaces/comment.interface";
 
-export const onCreate = functions.firestore
+export const onCreateComment = functions.firestore
   .document("/comment/{commentId}")
   .onCreate(async (snapshot, context) => {
     let newComment = snapshot.data() as CommentContent;
@@ -48,7 +48,7 @@ export const onCreate = functions.firestore
     }
   });
 
-export const onDelete = functions.firestore
+export const onDeleteComment = functions.firestore
   .document("/comment/{commentId}")
   .onDelete(async (snapshot, _context) => {
     return new Promise<void>((resolve, reject) => {

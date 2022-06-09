@@ -5,7 +5,7 @@ import { CommentContent } from "../interfaces/comment.interface";
 import returnSuccess from "../utils/successHandler";
 
 const addComment = async (req: Request, res: Response, next: NextFunction) => {
-  const { userId, displayName, avatar, text } = req.body;
+  const { userId, author, avatar, text } = req.body;
   const { exploreId } = req.params;
 
   try {
@@ -13,7 +13,7 @@ const addComment = async (req: Request, res: Response, next: NextFunction) => {
     const commentObject: CommentContent = {
       id: querySnapshot.id,
       userId,
-      displayName,
+      author,
       avatar,
       text,
       exploreId,

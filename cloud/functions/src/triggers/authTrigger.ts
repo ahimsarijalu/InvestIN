@@ -4,13 +4,13 @@ import {
   deleteUserInFirestore,
 } from "./methods/authMethods";
 
-export const onCreate = functions.auth
+export const onCreateAuth = functions.auth
   .user()
   .onCreate((userRecord, _context) => {
     createUserInFirestore(userRecord);
   });
 
-export const onDelete = functions.auth
+export const onDeleteAuth = functions.auth
   .user()
   .onDelete((userRecord, _context) => {
     deleteUserInFirestore(userRecord);
