@@ -1,7 +1,7 @@
 # InvestIN - Cloud
-Backend branch with the aim of providing a working use of Firebase Authentication + Cloud Firestore services.
+Backend branch with the aim of providing a working use of Firebase + Cloud services (Function, Firestore, Storage, Identity Platform).
 
-## Stacks
+## Tech Stacks
 - Firebase
 - Cloud Firestore
 - Identity Platform
@@ -9,7 +9,6 @@ Backend branch with the aim of providing a working use of Firebase Authenticatio
 - Cloud Function
 - Node.js Express
 - Typescript
-- Multer
 - Busboy
 - Lodash
 - Prettier
@@ -37,7 +36,7 @@ This `cloud` repository is a sub-branch from `main` along with other branches, `
 
 - `main` contains all the documentation and a version release from all branches.
 - `cloud` contains backend development and deployments.
-- `ML` contains recommendation implementation towards a dataset.
+- `ML` contains the revenue growth model.
 - `mobile` contains the Android mobile development.
 
 ----
@@ -61,8 +60,9 @@ Each endpoint manipulates or displays information related to the User whose
 Token is provided with the request:
 
 * [Show All Signed Up User Info](docs/user/get.md) : `GET /user`
-* [Show User info](docs/user/get.md) : `GET /user/:userId`
+* [Show User Info](docs/user/get.md) : `GET /user/:userId`
 * [Update User Info](docs/user/patch.md) : `PATCH /user/:userId`
+* [Upload User Avatar](docs/user/post.md) : `POST /user/upload/:userId`
 
 ### Explore related
 
