@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-<!--   <a href=""><img src="https://github.com/reynardets/BeeSafe/blob/android/app/img/logo.png" alt="Markdownify" width="200"></a> -->
+  <a href=""><img src="https://github.com/ayaazzara/InvestIN/blob/mobile/mobile/assets/logo-squared-circle.svg" alt="Markdownify" width="120"></a>
   <br>
   InvestIN
   <br>
