@@ -12,7 +12,7 @@
     <string name="app_logo">App Logo</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-    <string name="create_account">Create account</string>
+    <string name="create_account">Create Account</string>
     <string name="arrow_up">Arrow Up</string>
     <string name="sign_up">Sign Up</string>
     <string name="notification">Notification</string>
@@ -61,4 +61,7 @@
     <string name="desc_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis interdum quis vel adipiscing magna. Viverra diam enim natoque, mauris sed nec aenean. Diam consequat non.</string>
     <string name="invest">Invest</string>
     <string name="image_preview">Image preview before uploaded.</string>
+    <string name="desc_first_onboarding">Sudah menjadi visi kami menjadi support nomor satu dalam merealisasikan ide bisnismu.</string>
+    <string name="desc_third_onboarding">Perjalananmu gak sebatas itu aja, kami punya segudang program pengembangan bisnis untukmu.</string>
+    <string name="desc_second_onboarding">Tak perlu khawatir kekurangan dana, kami punya daftar investor yang siap berinvestasi untuk bisnismu.</string>
 </resources>

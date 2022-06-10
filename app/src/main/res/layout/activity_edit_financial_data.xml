@@ -265,6 +265,8 @@
             android:text="@string/save"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
             app:cornerRadius="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

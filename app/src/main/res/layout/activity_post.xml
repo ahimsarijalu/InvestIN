@@ -42,6 +42,8 @@
         android:text="@string/post"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
