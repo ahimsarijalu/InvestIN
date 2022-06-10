@@ -7,7 +7,7 @@
 </h1>
 
 #### Economic & Social Resilience
-An application that connects investors and Small and Medium Enterprise owners.
+An application that connects investors with Small and Medium Enterprise owners.
 SME owners can showcase their business, so investors can 
 see them and see the revenue growth prediction of the 
 business, if they show interest, the business owner can 
