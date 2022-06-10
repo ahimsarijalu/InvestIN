@@ -19,6 +19,9 @@ contact the investor straightaway.
 - Revenue growth prediction
 - Connecting investor with Small and Medium Enterprises (SME) owner
 - SME can showcase their business
+
+## Download
+Get the app from our [releases page](https://github.com/ayaazzara/InvestIN/releases).
   
 ## Libraries
 #### Android
