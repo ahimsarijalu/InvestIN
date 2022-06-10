@@ -24,8 +24,9 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner_blue.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_details.xml" value="0.264" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_edit_financial_data.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_edit_profile.xml" value="0.2441123188405797" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_invest.xml" value="0.21739130434782608" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_invest.xml" value="0.4" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_onboarding.xml" value="0.22146739130434784" />
@@ -54,27 +55,6 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/xml/investor_preferences.xml" value="0.2441123188405797" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/xml/preferences.xml" value="0.12234042553191489" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/drawable/ic_role_investor_img.xml" value="0.184" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_details.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_edit_financial_data.xml" value="0.22" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_edit_profile.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_invest.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_post.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_roles.xml" value="0.22" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_settings.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_sign_in.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/activity_signup.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/category_list_item.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_first_on_boarding.xml" value="0.10326086956521739" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_notifications.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_profile.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_second_on_boarding.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/item_post_image.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/ANNISA/AndroidStudioProjects/InvestIN/app/src/main/res/layout/item_row_explore.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>

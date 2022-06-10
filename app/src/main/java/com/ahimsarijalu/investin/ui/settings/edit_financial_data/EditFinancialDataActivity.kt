@@ -70,13 +70,13 @@ class EditFinancialDataActivity : AppCompatActivity() {
                         ByteBuffer.allocateDirect(bufferSize).order(ByteOrder.nativeOrder())
                     interpreter.run(inputs, output)
 
-                    val revenueGrowth = output.getFloat(0).toString()
+                    val revenueGrowth = output.getFloat(0)
                     updateToFirestore(revenueGrowth)
                 }
             }
     }
 
-    private fun updateToFirestore(revenueGrowth: String) {
+    private fun updateToFirestore(revenueGrowth: Float) {
         val user = Firebase.auth.currentUser
         val db = Firebase.firestore
         val data = mapOf(

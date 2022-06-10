@@ -12,6 +12,7 @@ import com.ahimsarijalu.investin.data.datasource.remote.response.UserDataItem
 import com.ahimsarijalu.investin.data.repository.Result
 import com.ahimsarijalu.investin.databinding.FragmentProfileBinding
 import com.ahimsarijalu.investin.utils.ViewModelFactory
+import com.ahimsarijalu.investin.utils.decimalToPercentage
 import com.ahimsarijalu.investin.utils.showToast
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -85,6 +86,11 @@ class ProfileFragment : Fragment() {
             categoryTv.text = user.category
             locationTv.text = location
             descTv.text = user.bio
+            if (!user.investorRole) {
+                rgTitleTv.visibility = View.VISIBLE
+                revenueGrowthTv.visibility = View.VISIBLE
+                revenueGrowthTv.text = user.revenueGrowth?.let { decimalToPercentage(it) }
+            }
         }
 
         setupButtonAction(user)

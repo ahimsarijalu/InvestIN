@@ -2,17 +2,22 @@ package com.ahimsarijalu.investin.utils
 
 import android.content.ContentResolver
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.exifinterface.media.ExifInterface
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.load.resource.bitmap.TransformationUtils.rotateImage
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -96,4 +101,28 @@ fun uriToFile(selectedImg: Uri, context: Context): File {
 
 interface ApiCallback {
     fun onResponse(success: Boolean)
+}
+
+fun prepareImage(getFile: File): MultipartBody.Part {
+    val file = reduceFileImage(getFile)
+    val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
+
+    return MultipartBody.Part.createFormData(
+        "photo",
+        file.name,
+        requestImageFile
+    )
+}
+
+fun imageChooser(launcherIntentGalery: ActivityResultLauncher<Intent>) {
+    val intent = Intent()
+    intent.action = Intent.ACTION_GET_CONTENT
+    intent.type = "image/*"
+    val chooser = Intent.createChooser(intent, "Choose a picture")
+    launcherIntentGalery.launch(chooser)
+}
+
+fun decimalToPercentage(revenueGrowth: Float): String {
+    val percentage = revenueGrowth.toDouble() * 100
+    return String.format("%.2f%%", percentage)
 }

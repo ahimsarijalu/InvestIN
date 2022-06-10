@@ -1,9 +1,6 @@
 package com.ahimsarijalu.investin.data.datasource.remote.retrofit
 
-import com.ahimsarijalu.investin.data.datasource.remote.response.AddExploreResponse
-import com.ahimsarijalu.investin.data.datasource.remote.response.ExploreResponse
-import com.ahimsarijalu.investin.data.datasource.remote.response.FileUploadResponse
-import com.ahimsarijalu.investin.data.datasource.remote.response.UserResponse
+import com.ahimsarijalu.investin.data.datasource.remote.response.*
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -36,4 +33,12 @@ interface ApiService {
         @Part file: MultipartBody.Part,
         @Path("docId") docId: String
     ): Call<FileUploadResponse>
+
+    @Multipart
+    @POST("user/upload/{userId}")
+    fun uploadAvatar(
+        @Header("Authorization") token: String,
+        @Part file: MultipartBody.Part,
+        @Path("userId") userId: String
+    ): Call<AvatarUploadResponse>
 }

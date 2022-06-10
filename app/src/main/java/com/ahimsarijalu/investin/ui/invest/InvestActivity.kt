@@ -10,8 +10,10 @@ import com.ahimsarijalu.investin.data.datasource.remote.response.UserDataItem
 import com.ahimsarijalu.investin.data.repository.Result
 import com.ahimsarijalu.investin.databinding.ActivityInvestBinding
 import com.ahimsarijalu.investin.utils.ViewModelFactory
+import com.ahimsarijalu.investin.utils.decimalToPercentage
 import com.ahimsarijalu.investin.utils.showToast
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -40,6 +42,20 @@ class InvestActivity : AppCompatActivity() {
 
     private fun showUser(userId: String) {
         binding.root.visibility = View.GONE
+        val currentUser = Firebase.auth.currentUser
+        if (currentUser != null) {
+            val db = Firebase.firestore
+
+            db.collection("users")
+                .document(currentUser.uid)
+                .get().addOnSuccessListener {
+                    val userData = it.toObject<UserDataItem>()!!
+
+                    if (userData.investorRole) {
+                        binding.investBtn.visibility = View.VISIBLE
+                    }
+                }
+        }
         investViewModel.getUserById(userId)
             .observe(this) { result ->
                 if (result != null) {
@@ -75,9 +91,16 @@ class InvestActivity : AppCompatActivity() {
             categoryTv.text = user.category
             locationTv.text = location
             descTv.text = user.bio
-        }
+            if (!user.investorRole) {
+                rgTitleTv.visibility = View.VISIBLE
+                revenueGrowthTv.visibility = View.VISIBLE
 
-        setupInvestButton()
+
+                revenueGrowthTv.text = user.revenueGrowth?.let { decimalToPercentage(it) }
+            } else {
+                investBtn.visibility = View.GONE
+            }
+        }
         setupButtonAction(user)
     }
 
@@ -109,29 +132,6 @@ class InvestActivity : AppCompatActivity() {
             this,
             ViewModelFactory(this)
         )[InvestViewModel::class.java]
-    }
-
-    private fun setupInvestButton() {
-        val currentUser = Firebase.auth.currentUser
-        val db = Firebase.firestore
-
-        if (currentUser != null) {
-            db.collection("users")
-                .document(currentUser.uid)
-                .get()
-                .addOnSuccessListener { result ->
-
-                    val userData = result.toObject<UserDataItem>()
-
-                    if (userData != null) {
-                        if (userData.investorRole) {
-                            binding.investBtn.visibility = View.GONE
-                        }
-                    }
-
-
-                }
-        }
     }
 
     companion object {

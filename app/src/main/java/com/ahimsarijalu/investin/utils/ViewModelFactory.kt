@@ -9,6 +9,7 @@ import com.ahimsarijalu.investin.ui.home.HomeViewModel
 import com.ahimsarijalu.investin.ui.invest.InvestViewModel
 import com.ahimsarijalu.investin.ui.post.PostViewModel
 import com.ahimsarijalu.investin.ui.profile.ProfileViewModel
+import com.ahimsarijalu.investin.ui.settings.edit_profile.EditProfileViewModel
 import kotlinx.serialization.ExperimentalSerializationApi
 
 @ExperimentalSerializationApi
@@ -29,6 +30,9 @@ class ViewModelFactory(private val context: Context) :
             }
             modelClass.isAssignableFrom(PostViewModel::class.java) -> {
                 PostViewModel(Injection.provideExploreRepository(context)) as T
+            }
+            modelClass.isAssignableFrom(EditProfileViewModel::class.java) -> {
+                EditProfileViewModel(Injection.provideUserRepository()) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

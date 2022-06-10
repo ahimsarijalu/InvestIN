@@ -11,6 +11,7 @@ import com.ahimsarijalu.investin.R
 import com.ahimsarijalu.investin.data.repository.Result
 import com.ahimsarijalu.investin.databinding.ActivityPostBinding
 import com.ahimsarijalu.investin.ui.MainActivity
+import com.ahimsarijalu.investin.ui.home.HomeFragment
 import com.ahimsarijalu.investin.utils.*
 import com.bumptech.glide.Glide
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -94,7 +95,7 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.previewImage.setOnClickListener {
-            imageChooser()
+            imageChooser(launcherIntentGalery)
         }
     }
 
@@ -107,14 +108,6 @@ class PostActivity : AppCompatActivity() {
             file = myFile
             Glide.with(this).load(selectedImg).centerCrop().into(binding.previewImage)
         }
-    }
-
-    private fun imageChooser() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Choose a picture")
-        launcherIntentGalery.launch(chooser)
     }
 
 

@@ -12,16 +12,13 @@ import com.ahimsarijalu.investin.data.datasource.remote.response.FileUploadRespo
 import com.ahimsarijalu.investin.data.datasource.remote.response.UserDataItem
 import com.ahimsarijalu.investin.data.datasource.remote.retrofit.ApiService
 import com.ahimsarijalu.investin.utils.ApiCallback
-import com.ahimsarijalu.investin.utils.reduceFileImage
+import com.ahimsarijalu.investin.utils.prepareImage
 import com.ahimsarijalu.investin.utils.wrapEspressoIdlingResource
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import kotlinx.serialization.ExperimentalSerializationApi
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -65,8 +62,6 @@ class ExploreRepository(
                             .get()
                             .addOnSuccessListener {
                                 val userData = it.toObject<UserDataItem>()!!
-
-                                Log.d("DEBUG", userData.displayName)
 
                                 val data = mapOf(
                                     "authorId" to userData.userId,
@@ -114,27 +109,15 @@ class ExploreRepository(
                     callback.onResponse(true)
                 } else {
                     callback.onResponse(false)
-                    Log.d("UploadDebug", "Error: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
                 callback.onResponse(false)
-                Log.d("UploadDebug", "Error: ${t.message.toString()}")
             }
 
         })
     }
 
 
-    private fun prepareImage(getFile: File): MultipartBody.Part {
-        val file = reduceFileImage(getFile)
-        val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
-
-        return MultipartBody.Part.createFormData(
-            "photo",
-            file.name,
-            requestImageFile
-        )
-    }
 }

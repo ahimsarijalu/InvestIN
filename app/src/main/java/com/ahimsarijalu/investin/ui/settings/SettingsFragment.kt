@@ -17,7 +17,8 @@ import com.google.firebase.ktx.Firebase
 class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferences(rootKey)
+        setPreferencesFromResource(R.xml.preferences, rootKey)
+        setPreferences()
 
         val logoutPreference = findPreference<Preference>("logout")
         logoutPreference?.setOnPreferenceClickListener {
@@ -39,7 +40,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    private fun setPreferences(rootKey: String?) {
+    private fun setPreferences() {
         val currentUser = Firebase.auth.currentUser
         val db = Firebase.firestore
 
@@ -49,10 +50,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
                 if (userData != null) {
                     if (userData.investorRole) {
-                        setPreferencesFromResource(R.xml.investor_preferences, rootKey)
-
-                    } else {
-                        setPreferencesFromResource(R.xml.preferences, rootKey)
+                        val financePreference = findPreference<Preference>("edit_financial_data")
+                        if (financePreference != null) {
+                            preferenceScreen.removePreference(financePreference)
+                        }
                     }
                 }
             }
