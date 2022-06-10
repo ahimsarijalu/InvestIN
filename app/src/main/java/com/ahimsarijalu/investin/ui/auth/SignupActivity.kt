@@ -3,7 +3,6 @@ package com.ahimsarijalu.investin.ui.auth
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
@@ -28,8 +27,8 @@ class SignupActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        val roles = this.getSharedPreferences("isInvestor", Context.MODE_PRIVATE).getBoolean("isInvestor", true)
-        Log.d(TAG, roles.toString())
+        val roles = this.getSharedPreferences("isInvestor", Context.MODE_PRIVATE)
+            .getBoolean("isInvestor", true)
         setupAction(roles)
         setupView()
     }
@@ -44,7 +43,12 @@ class SignupActivity : AppCompatActivity() {
             "Healthcare",
             "Food and Beverage",
             "Automotive",
-            "Toys and Hobbies"
+            "Toys and Hobbies",
+            "Education",
+            "Finance",
+            "Marketplace",
+            "Assurance",
+            "Transportation and Accommodation"
         )
         val adapter = ArrayAdapter(this, R.layout.category_list_item, items)
         (binding.categoryTextField.editText as? AutoCompleteTextView)?.setAdapter(adapter)
@@ -67,22 +71,24 @@ class SignupActivity : AppCompatActivity() {
                         val userDetails = mapOf(
                             "investorRole" to roles,
                             "category" to category,
-                            "name" to name
+                            "displayName" to name
                         )
 
                         db.collection("users")
                             .document(user?.uid.toString())
                             .update(userDetails)
-                            .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
-                        Toast.makeText(
-                            this, "Account created",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        auth.signOut()
-                        Intent(this, SignInActivity::class.java).apply {
-                            startActivity(this)
-                            finish()
-                        }
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    this, "Account created",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                auth.signOut()
+                                Intent(this, SignInActivity::class.java).apply {
+                                    startActivity(this)
+                                    finish()
+                                }
+                            }
+
                     } else {
                         Toast.makeText(
                             this, task.exception?.message.toString(),

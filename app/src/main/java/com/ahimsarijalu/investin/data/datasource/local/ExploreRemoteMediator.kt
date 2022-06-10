@@ -73,6 +73,7 @@ class ExploreRemoteMediator(
             }
             return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
         } catch (exception: Exception) {
+            Log.d("DEBUG", exception.message.toString())
             return MediatorResult.Error(exception)
         }
     }

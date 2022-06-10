@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ahimsarijalu.investin" >
+    package="com.ahimsarijalu.investin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -8,11 +15,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.InvestIN.Starting" >
+        android:theme="@style/Theme.InvestIN.Starting">
+        <activity
+            android:name=".ui.invest.InvestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.InvestIN" >
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.settings.edit_financial_data.EditFinancialDataActivity"
             android:exported="false"
-            android:theme="@style/Theme.InvestIN"/>
+            android:theme="@style/Theme.InvestIN" />
         <activity
             android:name=".ui.settings.edit_profile.EditProfileActivity"
             android:exported="false"
@@ -47,7 +64,7 @@
             android:theme="@style/Theme.InvestIN" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

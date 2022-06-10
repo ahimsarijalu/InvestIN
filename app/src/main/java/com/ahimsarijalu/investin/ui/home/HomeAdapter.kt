@@ -1,6 +1,8 @@
 package com.ahimsarijalu.investin.ui.home
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
@@ -26,7 +28,7 @@ class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF
     inner class ListViewHolder(private var binding: ItemRowExploreBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataItem) {
-            Glide.with(itemView.context)
+            Glide.with(itemView)
                 .load(data.avatar)
                 .circleCrop()
                 .into(binding.exploreAvatar)
@@ -35,6 +37,7 @@ class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF
             binding.postTv.text = data.text
 
             val carousel = binding.photoCarousel
+            carousel.visibility = View.GONE
             carousel.carouselListener = object : CarouselListener {
                 override fun onCreateViewHolder(
                     layoutInflater: LayoutInflater,
@@ -57,14 +60,13 @@ class HomeAdapter : PagingDataAdapter<DataItem, HomeAdapter.ListViewHolder>(DIFF
                 }
             }
             val photoList = mutableListOf<CarouselItem>()
-            if (data.imageUrl != null) {
-                for (photo in data.imageUrl) {
-                    photoList.add(
-                        CarouselItem(
-                            imageUrl = photo
-                        )
+            carousel.visibility = View.VISIBLE
+            for (photo in data.imageUrl) {
+                photoList.add(
+                    CarouselItem(
+                        imageUrl = photo
                     )
-                }
+                )
             }
 
             carousel.setData(photoList)

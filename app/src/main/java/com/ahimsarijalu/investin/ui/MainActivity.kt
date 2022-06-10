@@ -13,6 +13,7 @@ import com.ahimsarijalu.investin.R
 import com.ahimsarijalu.investin.databinding.ActivityMainBinding
 import com.ahimsarijalu.investin.ui.onboarding.OnBoardingActivity
 import com.ahimsarijalu.investin.ui.roles.RolesActivity
+import com.ahimsarijalu.investin.utils.getToken
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         } else {
+            getToken()
             val navHostFragment = supportFragmentManager
                 .findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
             navController = navHostFragment.navController

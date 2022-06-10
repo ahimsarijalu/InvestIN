@@ -42,4 +42,23 @@
     <string name="logout_question">Do you want to logout?</string>
     <string name="cancel_text">Cancel</string>
     <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="sg_amp_a_expenses"><![CDATA[SG&A Expenses]]></string>
+    <string name="r_amp_d_expenses"><![CDATA[R&D Expenses]]></string>
+    <string name="debt_to_assets">Debt to Assets</string>
+    <string name="interest_expense">Interest Expense</string>
+    <string name="expenses">Expenses</string>
+    <string name="revenue">Revenue</string>
+    <string name="assets_turnover">Assets Turnover</string>
+    <string name="net_income">Net Income</string>
+    <string name="intangibles_to_total_assets">Intangibles to Total Assets</string>
+    <string name="gross_margin">Gross Margin</string>
+    <string name="gross_profit_growth">Gross Profit Growth</string>
+    <string name="profit">Profit</string>
+    <string name="location">Location</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="desc_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis interdum quis vel adipiscing magna. Viverra diam enim natoque, mauris sed nec aenean. Diam consequat non.</string>
+    <string name="invest">Invest</string>
+    <string name="image_preview">Image preview before uploaded.</string>
 </resources>

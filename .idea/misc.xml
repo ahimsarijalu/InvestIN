@@ -22,7 +22,10 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/ic_splash_screen.xml" value="0.1635" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/drawable/rounded_corner_blue.xml" value="0.1645" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_details.xml" value="0.264" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_edit_financial_data.xml" value="0.264" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_invest.xml" value="0.21739130434782608" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/layout/activity_onboarding.xml" value="0.22146739130434784" />
@@ -49,6 +52,7 @@
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/menu/home_menu.xml" value="0.2515625" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1645" />
+        <entry key="..\:/Code/Android/InvestIN/app/src/main/res/xml/investor_preferences.xml" value="0.2441123188405797" />
         <entry key="..\:/Code/Android/InvestIN/app/src/main/res/xml/preferences.xml" value="0.12234042553191489" />
       </map>
     </option>

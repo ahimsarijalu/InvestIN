@@ -26,25 +26,28 @@ data class DataItem(
 	@field:SerializedName("createdAt")
 	val createdAt: String,
 
-	@field:SerializedName("likeUsers")
-	val likeUsers: List<String>,
-
 	@field:SerializedName("author")
 	val author: String,
 
 	@field:SerializedName("imageUrl")
-	val imageUrl: List<String>?,
-
-	@field:SerializedName("text")
-	val text: String,
-
-	@field:SerializedName("avatar")
-	val avatar: String,
+	val imageUrl: List<String>,
 
 	@PrimaryKey
 	@field:SerializedName("id")
 	val id: String,
 
+	@field:SerializedName("avatar")
+	val avatar: String,
+
+	@field:SerializedName("text")
+	val text: String,
+
+	@field:SerializedName("authorId")
+	val authorId: String,
+
 	@field:SerializedName("category")
-	val category: String
+	val category: String,
+
+	@field:SerializedName("commentCounter")
+	val commentCounter: Int
 ) : Parcelable

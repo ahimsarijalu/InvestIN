@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toStartOf="@+id/emailButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/desc_tv"
+        app:layout_constraintTop_toBottomOf="@id/invest_btn"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -113,6 +113,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location_tv" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/invest_btn"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/navy_blue"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="8dp"
+        android:text="@string/invest"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tv"
+        tools:ignore="TextContrastCheck" />
 
     <ProgressBar
         android:id="@+id/progressBar"

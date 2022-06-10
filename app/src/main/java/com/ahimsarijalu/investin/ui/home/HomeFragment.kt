@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahimsarijalu.investin.R
+import com.ahimsarijalu.investin.data.datasource.remote.response.DataItem
 import com.ahimsarijalu.investin.databinding.FragmentHomeBinding
+import com.ahimsarijalu.investin.ui.details.DetailsActivity
 import com.ahimsarijalu.investin.ui.post.PostActivity
 import com.ahimsarijalu.investin.ui.settings.SettingsActivity
 import com.ahimsarijalu.investin.utils.ViewModelFactory
@@ -27,16 +29,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
         showExplore()
         setHasOptionsMenu(true)
 
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -79,10 +77,21 @@ class HomeFragment : Fragment() {
             }
         )
 
-        homeViewModel.getToken()
-
         homeViewModel.explore.observe(viewLifecycleOwner) { explore ->
             adapter.submitData(lifecycle, explore)
+        }
+
+        adapter.setOnItemClickCallback(object : HomeAdapter.OnItemClickCallback {
+            override fun onItemClicked(view: HomeAdapter.ListViewHolder, data: DataItem) {
+                showSelectedExplore(data)
+            }
+        })
+    }
+
+    private fun showSelectedExplore(data: DataItem) {
+        Intent(activity, DetailsActivity::class.java).apply {
+            putExtra(DetailsActivity.EXTRA_USER, data)
+            startActivity(this)
         }
     }
 

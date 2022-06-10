@@ -17,6 +17,8 @@ class EditProfileActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+
+
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true
