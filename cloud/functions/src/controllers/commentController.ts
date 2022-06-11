@@ -5,14 +5,14 @@ import { CommentContent } from "../interfaces/comment.interface";
 import returnSuccess from "../utils/successHandler";
 
 const addComment = async (req: Request, res: Response, next: NextFunction) => {
-  const { userId, author, avatar, text } = req.body;
+  const { authorId, author, avatar, text } = req.body;
   const { exploreId } = req.params;
 
   try {
     const querySnapshot = db.collection("comment").doc();
     const commentObject: CommentContent = {
       id: querySnapshot.id,
-      userId,
+      authorId,
       author,
       avatar,
       text,

@@ -1,6 +1,6 @@
 export interface CommentContent {
   id?: string;
-  userId?: string;
+  authorId?: string;
   author?: string;
   avatar?: string;
   text?: string;

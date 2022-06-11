@@ -16,6 +16,7 @@ Allow the Authenticated User to update their details.
     "bio": " ",
     "city": " ",
     "province": " ",
+    "investorRole": boolean,
     "organization": " ",
     "category": " ",
     "imageUrl": [" ", " "],
@@ -23,7 +24,7 @@ Allow the Authenticated User to update their details.
 }
 ```
 
-Note that `id`, `userId`, `createdAt`, `investorRole` and `email` are currently read only fields.
+Note that `id`, `userId`, `createdAt` and `email` are currently read only fields.
 
 ## Success Responses
 
@@ -31,26 +32,27 @@ Note that `id`, `userId`, `createdAt`, `investorRole` and `email` are currently 
 
 **Code** : `200 OK`
 
-**Content example** : Response will reflect back all the updated information. A
-User with `name` of 'Tester' sets their name, passing `investorRole` as 'false' and `organization` as 'FoobBar'.
+**Content example** : Response will reflect back all the updated information.
 
 ```json
 "data": {
-        "name": "Tester",
+        "userId": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
+        "createdAt": "2022-05-31T03:23:52.003Z",
+        "investorRole": false,
         "bio": "Foo bar foo bar foo bar",
-        "city": "Foo",
-        "province": "Bar",
-        "organization": "FooBar",
-        "category": "Internet Publishing",
-        "imageUrl": [
-            "https://firebasestorage.googleapis.com/v0/...",
-            "https://firebasestorage.googleapis.com/v0/..."
-        ],
+        "email": "investor@dev.com",
         "postsLiked": [
             "post1id",
             "post2id",
             "post3id"
-        ]
+        ],
+        "displayName": "Bambang",
+        "city": "Foo",
+        "category": "Sport",
+        "province": "Bar",
+        "organization": "FooBar",
+        "avatar": "https://firebasestorage.googleapis.com/v0/b/investin-350603.appspot.com/o/avatar%2Favatar_placeholder.png?alt=media&token=7057cc7a-194f-4420-9f81-c906d681e21d",
+        "id": "1mHDkpVaJVVWp3JlhFrJNHZDuO12"
     }
 ```
 
@@ -82,4 +84,4 @@ User with `name` of 'Tester' sets their name, passing `investorRole` as 'false' 
 
 * Endpoint will ignore irrelevant and read-only data such as parameters that
   don't exist, or fields that are not editable like `id` or `email`.
-* Partial data update is not allowed as of this version.
+* Partial data update is not allowed/doable as of this version.
