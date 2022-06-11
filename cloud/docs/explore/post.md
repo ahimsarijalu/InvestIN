@@ -13,7 +13,6 @@ Add an explore post for Authenticated Users.
 ```json
 {
     "text": " ",
-    "imageUrl": [" "],
 }
 ```
 
@@ -27,11 +26,10 @@ This will create a new explore post.
 
 ```json
 "data": {
+        "id": "gTENpCvzVCY9w4KDvZJE",
         "text": "This is a text of string for the user to input whatever they want to express or vent with investin.",
-        "imageUrl": [
-            "https://firebasestorage.googleapis.com/v0...",
-        ],
-        "createdAt": "2022-06-05T18:56:46.540Z"
+        "commentCounter": 0,
+        "createdAt": "2022-06-11T03:44:04.538Z"
     }
 ```
 

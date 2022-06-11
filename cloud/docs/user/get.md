@@ -19,15 +19,25 @@ Upon getting a user, the `userId` is the same as `id`. This `id` is the modified
 ```json
 "data": [
     {
-        "email": "investin@dev.com",
-        "userId": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
-        "createdAt": "2022-05-31T03:23:52.003Z",
-        "id": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
-        "investorRole": false,
-        "category": "Fashion",
-        "name": "InvestinTest",
+        "email": "investor@dev.com",
+            "createdAt": "2022-05-31T03:23:52.003Z",
+            "organization": "FooBar",
+            "bio": "Foo bar foo bar foo bar",
+            "postsLiked": [
+                "post1id",
+                "post2id",
+                "post3id"
+            ],
+            "displayName": "Bambang",
+            "city": "Foo",
+            "category": "Sport",
+            "avatar": "https://firebasestorage.googleapis.com/v0/b/investin-350603.appspot.com/o/avatar%2F11-Jun-20222400166427091768582.jpg?alt=media&token=35bfa239-d1ec-4a2f-ae96-4406f43e3571",
+            "userId": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
+            "province": "Bar",
+            "investorRole": true,
+            "id": "1mHDkpVaJVVWp3JlhFrJNHZDuO12"
     },
-    {...}
+    {...} //continuing
 ]
 ```
 
@@ -53,13 +63,23 @@ Upon getting a user, the `userId` is the same as `id`. This `id` is the modified
 ```json
 "data": [
     {
-        "email": "investin@dev.com",
-        "userId": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
-        "createdAt": "2022-05-31T03:23:52.003Z",
-        "id": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
-        "investorRole": false,
-        "category": "Fashion",
-        "name": "InvestinTest",
+        "email": "investor@dev.com",
+            "createdAt": "2022-05-31T03:23:52.003Z",
+            "organization": "FooBar",
+            "bio": "Foo bar foo bar foo bar",
+            "postsLiked": [
+                "post1id",
+                "post2id",
+                "post3id"
+            ],
+            "displayName": "Bambang",
+            "city": "Foo",
+            "category": "Sport",
+            "avatar": "https://firebasestorage.googleapis.com/v0/b/investin-350603.appspot.com/o/avatar%2F11-Jun-20222400166427091768582.jpg?alt=media&token=35bfa239-d1ec-4a2f-ae96-4406f43e3571",
+            "userId": "1mHDkpVaJVVWp3JlhFrJNHZDuO12",
+            "province": "Bar",
+            "investorRole": true,
+            "id": "1mHDkpVaJVVWp3JlhFrJNHZDuO12"
     }
 ]
 ```

@@ -10,7 +10,6 @@ export const createUserInFirestore = async (userDoc: UserRecord) => {
     let newUser: User = {
       userId: userDoc.uid,
       email: userDoc.email,
-      displayName: userDoc.displayName,
       avatar: placeholder,
       city: "",
       province: "",
