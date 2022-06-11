@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "resolveJsonModule": true, //allow import json file
+    "esModuleInterop": true
+  },
+  "compileOnSave": true,
+  "include": ["src", "src/utils/HTTPError.ts", "src/triggers/userTrigger.ts"]
+}
