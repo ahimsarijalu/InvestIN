@@ -1,0 +1,10 @@
+cloud/.DS_Store
+cloud/functions/lib
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
